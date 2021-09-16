@@ -8,59 +8,54 @@ import java.util.Iterator;
 
 //Implementation of RandomQueue class
 
-public class RandomQueue < Typ > implements Queue < Typ > {
+public class RandomQueue < Type > implements QueueInterface< Type > {
 
-    //Declare qObject as type of <T>
+    //Declare qObject as type of <T> and initialize queueObject
 
-    private Typ[] qObject;
+    private Type[] queueObject=(Type[]) new Object[SIZE];
 
-//Declare total as type of integer
+//Declare total as type of integer and initialize total with 0
 
-    private int total;
+    private int total=0;
 
 //Declare SIZE as final integer
 
     private static final int SIZE = 80;
 
+
 //Implementation of default constructor
 
     public RandomQueue() {
-
-        //initialize qObject
-
-        qObject = (Typ[]) new Object[SIZE];
-
-        //initialize total with 0
-
-        total = 0;
-
+//total ve queueObject burdada initilize edilebilir
     }
 
 //Implementation of add function
 
-    public void add(Typ element) {
+
+    @Override
+    public void add(Type element) {
 
         //check total is equal to qObject.length
 
-        if (total == qObject.length) {
+        if (total == queueObject.length) {
 
             //Declare temporary as type of T and initialize it
 
-            Typ temporay[] = (Typ[]) new Object[total * 2];
+            Type temporay[] = (Type[]) new Object[total * 2];
 
             //call arraycopy function
 
-            System.arraycopy(qObject, 0, temporay, 0, total);
+            System.arraycopy(queueObject, 0, temporay, 0, total);
 
             //assign temporay to qObject
 
-            qObject = temporay;
+            queueObject = temporay;
 
         }
 
-        //assign element to qObject[total]
+        //assign element to queueObject[total]
 
-        qObject[total] = element;
+        queueObject[total] = element;
 
         //increment total by 1
 
@@ -70,7 +65,8 @@ public class RandomQueue < Typ > implements Queue < Typ > {
 
 //Implementation of remove function
 
-    public Typ remove() {
+    @Override
+    public Type remove() {
 
         if (!isEmpty()) {
 
@@ -84,11 +80,11 @@ public class RandomQueue < Typ > implements Queue < Typ > {
 
             //Declare element as type of T
 
-            Typ element = qObject[randomIndexValue];
+            Type element = queueObject[randomIndexValue];
 
             //assign qObject[total-1] to qObject[randomIndexValue]
 
-            qObject[randomIndexValue] = qObject[total - 1];
+            queueObject[randomIndexValue] = queueObject[total - 1];
 
             //Decrement total by 1
 
@@ -107,7 +103,7 @@ public class RandomQueue < Typ > implements Queue < Typ > {
     }
 
 //Implementation of isEmpty function
-
+    @Override
     public boolean isEmpty() {
 
         //return
@@ -140,7 +136,7 @@ public class RandomQueue < Typ > implements Queue < Typ > {
 
             //add output to queue[k]
 
-            output = output + qObject[k];
+            output = output + queueObject[k];
 
             //check k is equal to total - 1
 

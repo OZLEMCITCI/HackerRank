@@ -1,8 +1,8 @@
 package homework;
 
-public interface Queue <Type>{
+public interface QueueInterface <Type>{
 
-    public void add(Type element);
+    public void add(Type item);
     public Type remove();
     public boolean isEmpty();
 }
