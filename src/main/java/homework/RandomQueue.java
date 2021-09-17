@@ -12,11 +12,11 @@ public class RandomQueue < Type > implements QueueInterface< Type > {
 
     //Declare qObject as type of <T> and initialize queueObject
 
-    private Type[] queueObject=(Type[]) new Object[SIZE];
+    private Type[] queueObject;
 
 //Declare total as type of integer and initialize total with 0
 
-    private int total=0;
+    private int total;
 
 //Declare SIZE as final integer
 
@@ -26,7 +26,8 @@ public class RandomQueue < Type > implements QueueInterface< Type > {
 //Implementation of default constructor
 
     public RandomQueue() {
-//total ve queueObject burdada initilize edilebilir
+        total=0;
+        queueObject=(Type[]) new Object[SIZE];
     }
 
 //Implementation of add function
@@ -68,7 +69,7 @@ public class RandomQueue < Type > implements QueueInterface< Type > {
     @Override
     public Type remove() {
 
-        if (!isEmpty()) {
+        if (!(total==0)/*!isEmpty*/) {
 
             // Declare randomIndexValue as type of integer
 
