@@ -1,9 +1,6 @@
 package com.hacerrank;
 
-import java.text.FieldPosition;
 import java.text.NumberFormat;
-import java.text.ParsePosition;
-import java.util.Currency;
 import java.util.Locale;
 import java.util.Scanner;
 

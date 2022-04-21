@@ -1,9 +1,5 @@
 package homework;
 
-import java.util.Collection;
-import java.util.Iterator;
-
-
 //RandomQueue.java
 
 //Implementation of RandomQueue class

@@ -1,10 +1,8 @@
 package com.hacerrank;
 
-import ch.qos.logback.classic.pattern.DateConverter;
-
-import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JavaDateAndTime {
     public static void main(String[] args) {
