@@ -1,6 +1,8 @@
 package com.hacerrank;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class ReverseAnArray {
@@ -15,6 +17,7 @@ public class ReverseAnArray {
 
         System.out.println(reverseArray(newList));
         System.out.println(reverseArray2(newList));
+
     }
 
     public static List<Integer> reverseArray(List<Integer> a) {
@@ -40,6 +43,8 @@ public class ReverseAnArray {
 
         return a;
     }
+
+
 
 
 }
